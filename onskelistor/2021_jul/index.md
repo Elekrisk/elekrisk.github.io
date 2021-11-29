@@ -1,6 +1,6 @@
 ---
 name: Önskelista Jul 2021
-title: null
+title: Önskelista Jul 2021
 ---
 # Jul 2021
 
