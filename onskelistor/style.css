@@ -1,5 +1,50 @@
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+body {
+  background-color: darkslategrey;
+}
+
+main {
+  margin: auto;
+  max-width: 50rem;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: gray;
+  height: 100%;
+}
+
+* {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2 {
+  margin: 2rem;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse
+}
+
+tr {
+  border-top: 2px solid black;
+}
+
+td, th {
+  border-right: 2px solid black;
+  padding: 0.5rem;
+}
+
+tr.top  {
+  border-top: 0px;
+}
+
+td.right, th.right {
+  border-right: 0px;
 }

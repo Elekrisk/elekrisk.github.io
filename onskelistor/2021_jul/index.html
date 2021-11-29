@@ -13,19 +13,21 @@ books: [
     <link rel="stylesheet" href="../style.css">
   </head>
   <body>
-    <h1>Önskelista Jul 2021</h1>
-    <h2>Böcker</h2>
-    <table>
-      <tr>
-        <th>Titel</th>
-        <th>Författare</th>
-      </tr>
-      {% for book in page.books %}
-        <tr>
-          <td>{{ book.title }}</td>
-          <td>{{ book.author }}</td>
+    <main>
+      <h1>Önskelista Jul 2021</h1>
+      <h2>Böcker</h2>
+      <table>
+        <tr class="top">
+          <th>Titel</th>
+          <th class="right">Författare</th>
         </tr>
-      {% endfor %}
-    </table>
-  </body>
+        {% for book in page.books %}
+          <tr>
+            <td>{{ book.title }}</td>
+            <td class="right">{{ book.author }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </body>
+    </main>
 </html>
