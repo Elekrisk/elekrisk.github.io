@@ -1,6 +1,26 @@
+---
+books: [
+  {title: To Sleep in a Sea of Stars, author: Cristopher Paulini}
+]
+---
+
 <html>
   <head>
   </head>
   <body>
+    <h1>Önskelista Jul 2021</h1>
+    <h2>Böcker</h2>
+    <table>
+      <tr>
+        <th>Titel</th>
+        <th>Författare</th>
+      </tr>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+        </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
