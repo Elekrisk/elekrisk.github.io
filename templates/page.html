@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock title %}
+{% block content %}
+    <div class="project">
+        <article>
+            <h1>{{ page.title }}</h1>
+            {{ page.content | safe }}
+        </article>
+        <aside>
+            {% for asset in page.assets %}
+            {% set image = resize_image(path=asset, width=200, height=200) %}
+            <img src="{{image.url}}" />
+            {% endfor %}
+            {% if page.taxonomies.type is defined %}
+            {% set type = page.taxonomies.type[0] %}
+            {% if type == "Hobby" %}
+            <p>Hobbyprojekt</p>
+            {% elif type == "KTH" %}
+            <p>Projekt&nbsp;på&nbsp;KTH</p>
+            {% elif type == "LiU" %}
+            <p>Projekt&nbsp;på&nbsp;Linköpings&nbsp;Universitet</p>
+            {% endif %}
+            {% endif %}
+            {% if page.extra.demo %}
+            <a href="/demos/{{page.slug}}/" target="_blank">Demo</a>
+            {% endif %}
+            {% if page.extra.git %}
+            <a href="{{page.extra.git}}" target="_blank" rel="external">Git-repo</a>
+            {% endif %}
+        </aside>
+    </div>
+{% endblock content %}

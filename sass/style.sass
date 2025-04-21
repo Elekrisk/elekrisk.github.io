@@ -1,0 +1,106 @@
+$primary:rgb(206, 103, 220)
+$bg:rgb(56, 35, 56)
+$shadow: rgba(0.0, 0.0, 0.0, 0.5)
+    
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-family: sans-serif
+
+html
+    background-color: $bg
+
+a
+    color: #eee
+a:hover
+    color: #aaa
+
+nav
+    display: flex
+    padding: 1rem
+    gap: 1rem
+    background-color: $primary
+
+    a
+        text-decoration: none
+        color: #000
+    a:hover
+        color: #333
+
+.breadcrumbs
+    padding: 0.5rem 1rem
+    color: #eee
+
+    a
+        text-decoration: none
+        color: #eee
+    a:hover
+        color: #aaa
+    .last
+        color: #aaa
+
+main
+    color: #ccc
+
+main
+    margin: 0 2rem
+
+
+.card
+    display: flex
+    align-items: center
+    gap: 1rem
+    padding: 1rem
+    margin: 1rem
+    border: 1px solid $primary
+    border-radius: 0.25rem
+    background-color: $bg
+    box-shadow: 10px 10px 10px $shadow
+
+    a
+        color: #eee
+    a:hover
+        color: #aaa
+    
+    .title
+        display: flex
+        gap: 0.5rem
+
+        .tags
+            a
+                text-decoration: none
+
+.project
+    display: flex
+    gap: 1rem
+    align-items: start
+
+    article
+        flex-grow: 1
+        p
+            margin: 0.5rem 0rem
+
+    aside
+        display: flex
+        flex-direction: column
+        gap: 0.25rem
+
+        border: 1px solid $primary
+        border-radius: 0.25rem
+        padding: 0.5rem
+        box-shadow: 10px 10px 10px $shadow
+
+        img
+            border-radius: 0.25rem
+        
+        a
+            color: #eee
+            text-decoration: none
+        a:hover
+            color: #aaa
+        a::before
+            content: "🔗 "
+
+code
+    font-family: monospace

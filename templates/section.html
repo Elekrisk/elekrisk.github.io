@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block content %}
+<h1>Projekt</h1>
+{% for page in section.pages %}
+<div class="card">
+    {% if page.assets %}
+    {% set image = resize_image(path=page.assets[0], width=50, height=50) %}
+    <img src={{image.url}} />
+    {% endif %}
+    <div>
+        <div class="title">
+            <h3><a href={{page.permalink}}>{{ page.title }}</a></h3>
+            {% if page.taxonomies.tags is defined %}
+            <div class="tags">
+                {% for tag in page.taxonomies.tags %}
+                {% set url = get_taxonomy_url(kind="tags", name=tag) %}
+                <a href={{url}}><i>{{tag}}</i></a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if page.taxonomies.type is defined %}
+            <p></p>
+            {{ page.taxonomies.type[0] }}
+            {% endif %}
+        </div>
+        {{ page.summary | safe }}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

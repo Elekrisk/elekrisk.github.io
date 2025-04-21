@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    {% block head %}
+    <link rel="stylesheet" href="/style.css" />
+    <title>{% block title %}{% endblock title %} - Elekrisk</title>
+    {% endblock head %}
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Hem</a>
+            <a href="/projects">Projekt</a>
+            <a href="/tags">Taggar</a>
+        </nav>
+        {% if page is defined %}
+        {% set ancestors = page.ancestors %}
+        {% set title = page.title %}
+        {% elif section is defined %}
+        {% set ancestors = section.ancestors %}
+        {% set title = section.title %}
+        {% else %}
+        {% set ancestors = [] %}
+        {% endif %}
+
+        {% if (ancestors | length) %}
+        <div class="breadcrumbs">
+            {% for ancestor in ancestors %}
+            {% set sec = get_section(path=ancestor, metadata_only=true) %}
+            <a href={{sec.path}}>{{sec.title}}</a>
+            &gt;
+            {% endfor %}
+            <span class="last">{{ title }}</span>
+        </div>
+        {% endif %}
+    </header>
+    <main>{% block content %}{% endblock content %}</main>
+    <footer>
+        {% block footer %}
+
+        {% endblock footer %}
+    </footer>
+</body>
+
+</html>
