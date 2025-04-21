@@ -391,7 +391,7 @@ function createBoard() {
             audio.play();
         }, 1500);
     }
-    imageObj.src = "/Bilder/fiamedmeralogo.png";
+    imageObj.src = "Bilder/fiamedmeralogo.png";
 
     return layer;
 }
