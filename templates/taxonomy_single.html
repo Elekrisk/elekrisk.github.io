@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock title %}
 {% block content %}
+
+{% if lang == "sv" %}
 <h1>Projekt med taggen <code>{{term.name}}</code></h1>
+{% elif lang == "en" %}
+<h1>Projects tagged <code>{{term.name}}</code></h1>
+{% endif %}
+
 {% for page in term.pages %}
 <div class="card">
     {% if page.assets %}

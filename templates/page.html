@@ -14,11 +14,11 @@
             {% if page.taxonomies.type is defined %}
             {% set type = page.taxonomies.type[0] %}
             {% if type == "Hobby" %}
-            <p>Hobbyprojekt</p>
+            <p>{{ trans(key="hobby", lang=lang) | replace(from=" ", to="&nbsp;") | safe }}</p>
             {% elif type == "KTH" %}
-            <p>Projekt&nbsp;på&nbsp;KTH</p>
+            <p>{{ trans(key="kth", lang=lang) | replace(from=" ", to="&nbsp;") | safe }}</p>
             {% elif type == "LiU" %}
-            <p>Projekt&nbsp;på&nbsp;Linköpings&nbsp;Universitet</p>
+            <p>{{ trans(key="liu", lang=lang) | replace(from=" ", to="&nbsp;") | safe }}</p>
             {% endif %}
             {% endif %}
             {% if page.extra.demo %}

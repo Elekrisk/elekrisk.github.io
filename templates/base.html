@@ -11,11 +11,6 @@
 
 <body>
     <header>
-        <nav>
-            <a href="/">Hem</a>
-            <a href="/projects">Projekt</a>
-            <a href="/tags">Taggar</a>
-        </nav>
         {% if page is defined %}
         {% set ancestors = page.ancestors %}
         {% set title = page.title %}
@@ -25,6 +20,27 @@
         {% else %}
         {% set ancestors = [] %}
         {% endif %}
+
+        <nav>
+            <div class="navbar">
+                {% if lang == "sv" %}
+                <a href="/">Hem</a>
+                <a href="/projects/">Projekt</a>
+                <a href="/tags/">Taggar</a>
+                {% elif lang == "en" %}
+                <a href="/en/">Home</a>
+                <a href="/en/projects/">Projects</a>
+                <a href="/en/tags/">Tags</a>
+                {% endif %}
+            </div>
+            <div class="lang">
+                {% if lang == "sv" %}
+                <a href="/en{{current_path}}">English</a>
+                {% elif lang == "en" %}
+                <a href="{{current_path | trim_start_matches(pat="/en")}}">Svenska</a>
+                {% endif %}
+            </div>
+        </nav>
 
         {% if (ancestors | length) %}
         <div class="breadcrumbs">
@@ -43,6 +59,6 @@
 
         {% endblock footer %}
     </footer>
-</body>
 
+</body>
 </html>

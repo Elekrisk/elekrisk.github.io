@@ -5,12 +5,30 @@ base_url = "https://portfolio.elekrisk.com"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
+
+default_language = "sv"
 
 taxonomies = [
   { name = "tags" },
   { name = "type" }
 ]
+
+[translations]
+hobby="Hobbyprojekt"
+kth="Projekt på KTH"
+liu="Projekt på LiU"
+
+[languages.en]
+taxonomies = [
+  { name = "tags" },
+  { name = "type" }
+]
+
+[languages.en.translations]
+hobby="Hobby project"
+kth="Project at KTH"
+liu="Project at LiU"
 
 [markdown]
 # Whether to do syntax highlighting

@@ -11,7 +11,7 @@ git = "https://github.com/INDAPlus20/brynolv-evper-ofjall-project"
 +++
 
 En filredigerare som kör på bare-metal AMD64 och stödjer
-FAT-filsystem. Gjord på en projektkurs på KTH.
+FAT-filsystem. Gjord på en projektkurs på KTH på circa 6 veckor.
 
 <!-- more -->
 

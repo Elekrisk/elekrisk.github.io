@@ -16,7 +16,7 @@ image = "fia-med-mera.png"
 git = "https://github.com/Elekrisk/fia-med-mera"
 +++
 
-*Fia med mera* är en variant av fia med knuff där man efter varje
+*Fia med mera* är en variant av Fia med knuff där man efter varje
 drag kan välja att aktivera en slumpässigt vald effekt.
 
 <!-- more -->

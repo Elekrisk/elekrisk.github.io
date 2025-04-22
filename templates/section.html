@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ section.title }}{% endblock title %}
 {% block content %}
-<h1>Projekt</h1>
+<h1>{{section.title}}</h1>
 {% for page in section.pages %}
 <div class="card">
     {% if page.assets %}
